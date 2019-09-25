@@ -907,7 +907,7 @@ class Profiler extends React.Component {
             style={{ display: "block" }}
           >
             <div className="sf-toolbar-block sf-toolbar-block-request sf-toolbar-status-normal ">
-              <a href="http://localhost:8000/_profiler/eeec88?panel=request">
+              <a href="/_profiler">
                 {" "}
                 <div className="sf-toolbar-icon">
                   {" "}
@@ -933,7 +933,7 @@ class Profiler extends React.Component {
                     <span>
                       {" "}
                       <a
-                        href="http://localhost:8000/_profiler"
+                        href="/_profiler"
                         title="App\Controller\FakeController"
                       >
                         FakeController :: fakeAction
