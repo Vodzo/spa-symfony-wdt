@@ -1,6 +1,6 @@
 {
   "name": "symfony-spa-wdt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Symfony Web Debug Toolbar for Single Page Apps",
   "main": "./dist/index.js",
   "scripts": {
