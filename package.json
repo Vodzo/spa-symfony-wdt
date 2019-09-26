@@ -2,9 +2,11 @@
   "name": "symfony-spa-wdt",
   "version": "0.0.1",
   "description": "Symfony Web Debug Toolbar for Single Page Apps",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -12,11 +14,25 @@
   },
   "author": "Vojislav Zelic",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/Vodzo/spa-symfony-wdt/issues"
   },
   "homepage": "https://github.com/Vodzo/spa-symfony-wdt#readme",
   "dependencies": {
     "react": "^16.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0"
   }
 }
