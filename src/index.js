@@ -456,6 +456,25 @@ class Profiler extends React.Component {
               setPreference("toolbar/displayState", "block");
             }
           );
+          if (getPreference("toolbar/displayState") == "none") {
+            document.getElementById(
+              "sfToolbarMainContent-" + newToken
+            ).style.display = "none";
+            document.getElementById(
+              "sfToolbarClearer-" + newToken
+            ).style.display = "none";
+            document.getElementById("sfMiniToolbar-" + newToken).style.display =
+              "block";
+          } else {
+            document.getElementById(
+              "sfToolbarMainContent-" + newToken
+            ).style.display = "block";
+            document.getElementById(
+              "sfToolbarClearer-" + newToken
+            ).style.display = "block";
+            document.getElementById("sfMiniToolbar-" + newToken).style.display =
+              "none";
+          }
           this.load(
             "sfwdt" + token,
             "/_wdt/xxxxxx".replace(/xxxxxx/, newToken),
@@ -471,27 +490,6 @@ class Profiler extends React.Component {
                   : "none";
               if (el.style.display == "none") {
                 return;
-              }
-              if (getPreference("toolbar/displayState") == "none") {
-                document.getElementById(
-                  "sfToolbarMainContent-" + newToken
-                ).style.display = "none";
-                document.getElementById(
-                  "sfToolbarClearer-" + newToken
-                ).style.display = "none";
-                document.getElementById(
-                  "sfMiniToolbar-" + newToken
-                ).style.display = "block";
-              } else {
-                document.getElementById(
-                  "sfToolbarMainContent-" + newToken
-                ).style.display = "block";
-                document.getElementById(
-                  "sfToolbarClearer-" + newToken
-                ).style.display = "block";
-                document.getElementById(
-                  "sfMiniToolbar-" + newToken
-                ).style.display = "none";
               }
               /* Handle toolbar-info position */ var toolbarBlocks = [].slice.call(
                 el.querySelectorAll(".sf-toolbar-block")

@@ -475,6 +475,15 @@ var Profiler = function (_React$Component) {
               }
               setPreference("toolbar/displayState", "block");
             });
+            if (getPreference("toolbar/displayState") == "none") {
+              document.getElementById("sfToolbarMainContent-" + newToken).style.display = "none";
+              document.getElementById("sfToolbarClearer-" + newToken).style.display = "none";
+              document.getElementById("sfMiniToolbar-" + newToken).style.display = "block";
+            } else {
+              document.getElementById("sfToolbarMainContent-" + newToken).style.display = "block";
+              document.getElementById("sfToolbarClearer-" + newToken).style.display = "block";
+              document.getElementById("sfMiniToolbar-" + newToken).style.display = "none";
+            }
             this.load("sfwdt" + token, "/_wdt/xxxxxx".replace(/xxxxxx/, newToken), function (xhr, el) {
               /* Evaluate in global scope scripts embedded inside the toolbar */var i,
                   scripts = [].slice.call(el.querySelectorAll("script"));
@@ -484,15 +493,6 @@ var Profiler = function (_React$Component) {
               el.style.display = -1 !== xhr.responseText.indexOf("sf-toolbarreset") ? "block" : "none";
               if (el.style.display == "none") {
                 return;
-              }
-              if (getPreference("toolbar/displayState") == "none") {
-                document.getElementById("sfToolbarMainContent-" + newToken).style.display = "none";
-                document.getElementById("sfToolbarClearer-" + newToken).style.display = "none";
-                document.getElementById("sfMiniToolbar-" + newToken).style.display = "block";
-              } else {
-                document.getElementById("sfToolbarMainContent-" + newToken).style.display = "block";
-                document.getElementById("sfToolbarClearer-" + newToken).style.display = "block";
-                document.getElementById("sfMiniToolbar-" + newToken).style.display = "none";
               }
               /* Handle toolbar-info position */var toolbarBlocks = [].slice.call(el.querySelectorAll(".sf-toolbar-block"));
               for (i = 0; i < toolbarBlocks.length; ++i) {
